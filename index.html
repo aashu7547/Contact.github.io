@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <style>
+        .img1 {
+            height: 25px;
+
+        }
+
+        img {
+            height: 900px;
+
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit';
+            background-color: #00062b;
+        }
+
+        .contact-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .text {
+            color: aqua;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 600px;
+            font-size: 40px;
+            margin-bottom: 10px;
+
+        }
+
+        .hr1 {
+            border: none;
+            width: 120px;
+            height: 5px;
+            background-color: purple;
+            border-radius: 10px;
+        
+        }
+        .contact-inputs{
+            width: 400px;
+            height: 50px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+            font-weight: 500;
+            color: rgb(238, 222, 48);
+            border-radius: 50px;
+        }
+        .contact-left textarea{
+            height: 150px;
+            padding-top: 15px;
+            border-radius: 20px;
+        }
+        .contact-inputs:focus{
+            border: 5px solid red;
+        }
+        .contact-inputs:placeholder{
+            color: rgb(2, 18, 252);
+        }
+        .contact-left textarea::placeholder{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .button{
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: rgb(0, 208, 255);
+            gap: 10px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(270deg, #ff994f,#fa6d86);
+            cursor: pointer;
+        }
+        @media (max-width:800px) {
+            .contact-inputs{
+                width: 80vw;
+
+            }
+            .contact-right{
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2 class="text">Get in touch</h2>
+                <hr class="hr1">
+            </div>
+            <input type="hidden" name="access_key" value="5940c5f6-db56-4b5e-a4d0-954667ccc3d5">
+            <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
+            <button class="button" type="submit">Submit <img class="img1" src="arrow1.png" alt=""></button>
+        </form>
+        <div class="contact-right">
+            <img src="form.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
